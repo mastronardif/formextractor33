@@ -77,8 +77,6 @@ void list(QWebElementCollection list)
 {
     foreach(QWebElement elem,  list)
     {
-        //qDebug() << elem.evaluateJavaScript("this.name").toString();
-        //qDebug() << elem.evaluateJavaScript("this.value").toString();
         QString row = QString("%1 : %2").arg(
                     elem.evaluateJavaScript("this.name").toString()
                    ,elem.evaluateJavaScript("this.value").toString());
