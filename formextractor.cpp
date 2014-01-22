@@ -77,9 +77,14 @@ void list(QWebElementCollection list)
 {
     foreach(QWebElement elem,  list)
     {
-        QString row = QString("%1 : %2").arg(
-                    elem.evaluateJavaScript("this.name").toString()
-                   ,elem.evaluateJavaScript("this.value").toString());
+        QString row = QString("%1 %2: %3 %4").arg(
+                     elem.evaluateJavaScript("this.type").toString()
+                    ,elem.evaluateJavaScript("this.name").toString()
+
+                    ,elem.evaluateJavaScript("this.value").toString()
+                    ,elem.evaluateJavaScript("this.checked").toString()
+                   //,elem.evaluateJavaScript("this.value").toString()
+                    );
 
         qDebug() << row;
     }
